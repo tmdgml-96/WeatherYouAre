@@ -31,11 +31,11 @@ App와 Module을 연동하여 날씨를 실시간으로 알립니다.
 
 <img width="500" alt="실시간 기상 정보를 이용한 개인화 서비스 구성도" src="https://user-images.githubusercontent.com/53897151/113578887-7b05c500-965e-11eb-932e-9b730b97bec1.png">
 
-    우리가 집중한 기술은 아래와 같습니다.
-    - 사용자 친화적인 GUI
-    - 실시간 측정 값으로 사용자에게 FCM(Firebase Cloud Messaging) 제공(자동/수동)
-    - Firebase에 저장된 기상 데이터를 활용한 1시간 단위 기온 예측
-    - 하루 6시간 기준 누적 강수량 측정 후, 제공   
+우리가 집중한 기술은 아래와 같습니다.   
+- 사용자 친화적인 GUI   
+- 실시간 측정 값으로 사용자에게 FCM(Firebase Cloud Messaging) 제공(자동/수동)    
+- Firebase에 저장된 기상 데이터를 활용한 1시간 단위 기온 예측    
+- 하루 6시간 기준 누적 강수량 측정 후, 제공      
 
 ## Application은 "____"에 집중하여 구현했습니다.
     # 다양한 앱을 직접 사용해보며, 사용자 친화적인 GUI

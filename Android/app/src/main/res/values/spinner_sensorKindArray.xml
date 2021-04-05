@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinner_sensorKindArray">
+        <item>-센서-</item>
+        <item>미세먼지</item>
+        <item>온도</item>
+        <item>습도</item>
+        <item>자외선</item>
+
+    </string-array>
+</resources>

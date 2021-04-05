@@ -1,0 +1,22 @@
+int Liquid_level = 0;
+int val;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(12, INPUT);
+
+}
+
+void loop() {
+
+  Liquid_level = digitalRead(12);
+  val = analogRead(A0);
+
+  if (val > 100) {
+    Serial.println( "접촉 수위 센서 전류 100 이상" );
+    Serial.println();
+
+    Serial.print("비접촉 Liquid_level = ");
+    Serial.println(Liquid_level, DEC);
+  }
+}

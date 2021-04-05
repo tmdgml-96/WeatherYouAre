@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinner_equipArray">
+        <item>-인접한 측정기-</item>
+        <item>한밭대</item>
+        <item>우리집</item>
+
+    </string-array>
+
+
+</resources>

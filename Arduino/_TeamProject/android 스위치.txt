@@ -1,0 +1,182 @@
+if (year(t) != 1970 )
+  {
+    if (second(t) == 30 | second(t) == 31 || second(t) == 32 || second(t) == 33 || second(t) == 34) {
+      if (Firebase.setString(firebaseData, path + "/weather/" + date, date))
+      {
+        if (rain >= 100) {
+          Serial.println( "   접촉 수위 센서 전류 100 이상" );
+          Serial.println();
+
+          rainCheckCnt++;
+
+          if (rainCheckCnt == 2 || rainCheckCnt == 3 && rainOnOff == "On") {
+
+            Serial.print(" * rainOnOff IS : ON");
+            Serial.println();
+
+            FcmSendMessageCheck();
+            firebaseData.fcm.setNotifyMessage(FcmDate, "비가 오고 있으니 우산 챙기세요.");
+
+            rainStartHour = hour(t);
+            if (rainStartHour >= 18) {
+              rainStoreCheckHour = (rainStartHour + 6) - 24;
+            } else {
+              rainStoreCheckHour = rainStartHour + 6;
+            }
+          }
+
+          Serial.print(" ~~~~ rainCheckCnt : ");
+          Serial.println(rainCheckCnt);
+          Serial.print(" * rainOnOff IS : OFF");
+          Serial.println();
+
+          Firebase.setFloat(firebaseData, path + "/weather/" + date + "/temperature", tp);
+          Firebase.setFloat(firebaseData, path + "/weather/" + date + "/humidity", h);
+          Firebase.setFloat(firebaseData, path + "/weather/" + date + "/dust", p10);
+          Firebase.setFloat(firebaseData, path + "/weather/" + date + "/uvIntensity", uvIntensity);
+          Firebase.setFloat(firebaseData , path + "/weather/" +  date + "/wind_speed" , blow);
+          if (rainStartHour <= rainStoreCheckHour) {
+
+            if (Liquid_level1 > 0 && Liquid_level2 == 0 && Liquid_level3 == 0 && Liquid_level4 == 0) {
+              Serial.print("비접촉 Liquid_level = ");
+              Serial.println(Liquid_level1, DEC);
+              Firebase.setFloat(firebaseData, path + "/weather/" + date + "/temperature", tp);
+              Firebase.setFloat(firebaseData, path + "/weather/" + date + "/humidity", h);
+              Firebase.setFloat(firebaseData, path + "/weather/" + date + "/dust", p10);
+              Firebase.setFloat(firebaseData, path + "/weather/" + date + "/uvIntensity", uvIntensity);
+              Firebase.setFloat(firebaseData , path + "/weather/" +  date + "/wind_speed" , blow);
+              Firebase.setFloat(firebaseData, path + "/weather/" + date + "/rain", 5);
+
+            }
+            else if (Liquid_level1 > 0 && Liquid_level2 > 0 && Liquid_level3 == 0 && Liquid_level4 == 0) {
+              Serial.print("비접촉 Liquid_level = ");
+              Serial.println(Liquid_level2, DEC);
+              
+              Firebase.setFloat(firebaseData, path + "/weather/" + date + "/temperature", tp);
+              Firebase.setFloat(firebaseData, path + "/weather/" + date + "/humidity", h);
+              Firebase.setFloat(firebaseData, path + "/weather/" + date + "/dust", p10);
+              Firebase.setFloat(firebaseData, path + "/weather/" + date + "/uvIntensity", uvIntensity);
+              Firebase.setFloat(firebaseData, path + "/weather/" +  date + "/wind_speed" , blow);
+              Firebase.setFloat(firebaseData, path + "/weather/" + date + "/rain", 10);
+
+            }
+            else if (Liquid_level1 > 0 && Liquid_level2 > 0 && Liquid_level3 > 0 && Liquid_level4 == 0) {
+              Serial.print("비접촉 Liquid_level = ");
+              Serial.println(Liquid_level3, DEC);
+              
+              Firebase.setFloat(firebaseData, path + "/weather/" + date + "/temperature", tp);
+              Firebase.setFloat(firebaseData, path + "/weather/" + date + "/humidity", h);
+              Firebase.setFloat(firebaseData, path + "/weather/" + date + "/dust", p10);
+              Firebase.setFloat(firebaseData, path + "/weather/" + date + "/uvIntensity", uvIntensity);
+              Firebase.setFloat(firebaseData , path + "/weather/" +  date + "/wind_speed" , blow);
+              Firebase.setFloat(firebaseData, path + "/weather/" + date + "/rain", 20);
+
+            }
+            else if (Liquid_level1 > 0 && Liquid_level2 > 0 && Liquid_level3 > 0 && Liquid_level4 > 0) {
+              Serial.print("비접촉 Liquid_level = ");
+              Serial.println(Liquid_level4, DEC);
+              
+              Firebase.setFloat(firebaseData, path + "/weather/" + date + "/temperature", tp);
+              Firebase.setFloat(firebaseData, path + "/weather/" + date + "/humidity", h);
+              Firebase.setFloat(firebaseData, path + "/weather/" + date + "/dust", p10);
+              Firebase.setFloat(firebaseData, path + "/weather/" + date + "/uvIntensity", uvIntensity);
+              Firebase.setFloat(firebaseData , path + "/weather/" +  date + "/wind_speed" , blow);
+              Firebase.setFloat(firebaseData, path + "/weather/" + date + "/rain", 30);
+
+            }
+
+          }
+        } else {
+          Serial.println();
+          Serial.println( "Rain Check Value NULL" );
+          Serial.println();
+
+          rainCheckCnt = 0;
+
+          Firebase.setFloat(firebaseData, path + "/weather/" + date + "/temperature", tp);
+          Firebase.setFloat(firebaseData, path + "/weather/" + date + "/humidity", h);
+          Firebase.setFloat(firebaseData, path + "/weather/" + date + "/dust", p10);
+          Firebase.setFloat(firebaseData, path + "/weather/" + date + "/uvIntensity", uvIntensity);
+          Firebase.setFloat(firebaseData , path + "/weather/" +  date + "/wind_speed" , blow);
+        }
+      }
+    }
+  }
+   uvOnOff
+  if (Firebase.getString(firebaseData, user + userEmail + uvOnOff))
+  {
+    if (firebaseData.dataType() == string) {
+      uvOnOff = (firebaseData.stringData());
+    }
+
+    if (uvOnOff == On) {
+
+      Serial.print(  uvOnOff IS  ON);
+      Serial.println();
+
+      if (  year(t) != 1970 && htemp == 1 && mtemp == 30 && Dcnt == 3) {
+
+        if (uvIntensity = 5.0 )
+        {
+          firebaseData.fcm.setNotifyMessage(FcmDate, 현재 자외선 지수는 '낮음');
+        }
+        else if (uvIntensity = 6.0  uvIntensity = 10.0 )
+        {
+          firebaseData.fcm.setNotifyMessage(FcmDate, 현재 자외선 지수는 '높음');
+        }
+        else if (uvIntensity = 11.0 )
+        {
+          firebaseData.fcm.setNotifyMessage(FcmDate, 현재 자외선 지수는 '위험');
+        }
+
+      }
+      else if (uvOnOff == Off) {
+        Serial.print(  uvOnOff IS  OFF);
+        Serial.println();
+
+      }
+    }
+
+     rainOnOff
+    if (Firebase.getString(firebaseData, user + userEmail + rainOnOff))
+    {
+      if (firebaseData.dataType() == string) {
+        rainOnOff = (firebaseData.stringData());
+      }
+    }
+
+     dustOnOff
+    if (Firebase.getString(firebaseData, user + userEmail + dustOnOff))
+    {
+      if (firebaseData.dataType() == string) {
+        dustOnOff = (firebaseData.stringData());
+      }
+      if (dustOnOff == On) {
+        Serial.print(  dustOnOff IS  );
+        Serial.print(dustOnOff);
+        Serial.println();
+
+        if (year(t) != 1970 && htemp == 13 && mtemp == 0 && Dcnt == 3) {
+          if (p10 = 5)
+          {
+            firebaseData.fcm.setNotifyMessage(FcmDate, 현재 미세먼지는 지수는 '좋음');
+          }
+          else if (p10 = 31 && p10 = 80)
+          {
+            firebaseData.fcm.setNotifyMessage( FcmDate, 현재 미세먼지는 지수는 '보통');
+          }
+          else if (p10 = 81 && p10 = 150)
+          {
+            firebaseData.fcm.setNotifyMessage(  FcmDate, 현재 미세먼지는 지수는 '나쁨');
+          }
+          else if (p10 = 151)
+          {
+            firebaseData.fcm.setNotifyMessage( FcmDate, 현재 미세먼지는 지수는 '매우 나쁨');
+          }
+        }
+      }
+      else if (dustOnOff == Off) {
+        Serial.print(  dustOnOff IS  OFF );
+        Serial.println();
+      }
+    }

@@ -38,14 +38,18 @@ App와 Module을 연동하여 날씨를 실시간으로 알립니다.
 
 ## Application은 "____"에 집중하여 구현했습니다.
     # 다양한 앱을 직접 사용해보며, 사용자 친화적인 GUI
-    # 
-    
-<img src="https://user-images.githubusercontent.com/53897151/113580591-ebade100-9660-11eb-8edd-d39c1272282a.png" width="750">
-<img src="https://user-images.githubusercontent.com/53897151/113580577-e6509680-9660-11eb-9b4f-25b13c2f6960.png" width="750">
-<img src="https://user-images.githubusercontent.com/53897151/113580596-ecdf0e00-9660-11eb-9b1c-8a3a9113812c.png" width="750">
-<img src="https://user-images.githubusercontent.com/53897151/113580600-ee103b00-9660-11eb-81d4-686162f47974.png" width="750">   
+    # 직관적인 그림으로 날씨 알림
+    # 실시간 데이터를 이용해 기상 예측 그래프 제공
+<img src="https://user-images.githubusercontent.com/53897151/113580591-ebade100-9660-11eb-8edd-d39c1272282a.png" width="700">
+<img src="https://user-images.githubusercontent.com/53897151/113580577-e6509680-9660-11eb-9b4f-25b13c2f6960.png" width="700">
+<img src="https://user-images.githubusercontent.com/53897151/113580596-ecdf0e00-9660-11eb-9b1c-8a3a9113812c.png" width="700">
+<img src="https://user-images.githubusercontent.com/53897151/113580600-ee103b00-9660-11eb-81d4-686162f47974.png" width="700">   
 
 ## Module은 "____"에 집중하여 구현했습니다.
+    # 총 8개의 센서 연결
+    # 실시간 데이터를 사용자에게 알리기 위해 빠르게 FCM 제공
+    # NodeMCU를 이용해 최대의 효율을 만들기 위해서 누적 강수량 측정
+    # 실외 설치 시, 전력 부족을 해결하기 위해 태양열 에너지 판과 보조배터리 사용
 <img src="https://user-images.githubusercontent.com/53897151/113580639-f8cad000-9660-11eb-8747-17efb4d9f041.png" width="700">
 <img src="https://user-images.githubusercontent.com/53897151/113580626-f5374900-9660-11eb-84c1-1d9c3c3b25cf.png" width="750">
 
@@ -72,5 +76,3 @@ App와 Module을 연동하여 날씨를 실시간으로 알립니다.
     [2] 조동혁 “로라 통신 기반의 클라우드 시스템을 구축된 스마트팜 플랫폼”, 한국정보통신학회 춘계학술대회 논문집, pp 917∼919, 2019.     
     [3] 허경용, 김광훈 “날씨 정보와 아두이노를 이용한 스마트 알람 시계”, 한국정보통신학회논문지, 제23권, 제8호, pp. 889∼895, 2019.    
     [4] 장현준, 이아론, 박현수, 황경호 “무선 멀티홉 네트워크 기반 실시간 기상환경 모니터링 시스템 개발” 한국통신학회 추계종합학술발표회 논문집, 2019. 
-
-

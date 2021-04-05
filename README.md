@@ -27,7 +27,8 @@ App와 Module을 연동하여 날씨를 실시간으로 알립니다.
 - 수집한 기상 환경 데이터를 위치, 시간, 센서 단계로 분류하여 관리하기 때문에 여러 분야(농업, 해양 등)에서 필요한 특정 기상 데이터를 간편하게 제공할 수 있다.
 
 ## Features
-![image](https://user-images.githubusercontent.com/53897151/113578749-42fe8200-965e-11eb-8119-7f2746711a65.png)   
+<img width="371" alt="그림1" src="https://user-images.githubusercontent.com/53897151/113578887-7b05c500-965e-11eb-932e-9b730b97bec1.png">
+   _전체 흐름도_
 
    우리가 집중한 기술은 아래와 같습니다.
 - 사용자 친화적인 GUI

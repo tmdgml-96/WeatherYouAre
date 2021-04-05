@@ -37,22 +37,14 @@ App와 Module을 연동하여 날씨를 실시간으로 알립니다.
     - 하루 6시간 기준 누적 강수량 측정 후, 제공
 
 
-## 어떤 모습으로 개발했냐면..
-
-- 예시 앱/모듈 사진
-
-|Application        |   Module  |
-|:------------:|:------------------------:|
-|<img src="https://user-images.githubusercontent.com/53897151/113579855-d4babf00-965f-11eb-8c4f-bf05c1c70260.png" width="150"> | <img src="https://user-images.githubusercontent.com/53897151/113579809-c8366680-965f-11eb-9d8f-e0999c20649a.jpg" width="250"> |      
-
 #### "Application은 이렇게 구현했습니다."
-<img src="https://user-images.githubusercontent.com/53897151/113580577-e6509680-9660-11eb-9b4f-25b13c2f6960.png" width="750">
 <img src="https://user-images.githubusercontent.com/53897151/113580591-ebade100-9660-11eb-8edd-d39c1272282a.png" width="750">
+<img src="https://user-images.githubusercontent.com/53897151/113580577-e6509680-9660-11eb-9b4f-25b13c2f6960.png" width="750">
 <img src="https://user-images.githubusercontent.com/53897151/113580596-ecdf0e00-9660-11eb-9b1c-8a3a9113812c.png" width="750">
 <img src="https://user-images.githubusercontent.com/53897151/113580600-ee103b00-9660-11eb-81d4-686162f47974.png" width="750">   
 
 #### "Module은 이렇게 구현했습니다."
-<img src="https://user-images.githubusercontent.com/53897151/113580639-f8cad000-9660-11eb-8747-17efb4d9f041.png" width="750">
+<img src="https://user-images.githubusercontent.com/53897151/113580639-f8cad000-9660-11eb-8747-17efb4d9f041.png" width="700">
 <img src="https://user-images.githubusercontent.com/53897151/113580626-f5374900-9660-11eb-84c1-1d9c3c3b25cf.png" width="750">
 
 

@@ -28,7 +28,8 @@ App와 Module을 연동하여 날씨를 실시간으로 알립니다.
 
 ## Features
 - 실시간 기상 정보를 이용한 개인화 서비스 구성도
-<img width="371" alt="그림1" src="https://user-images.githubusercontent.com/53897151/113578887-7b05c500-965e-11eb-932e-9b730b97bec1.png">
+
+<img width="500" alt="실시간 기상 정보를 이용한 개인화 서비스 구성도" src="https://user-images.githubusercontent.com/53897151/113578887-7b05c500-965e-11eb-932e-9b730b97bec1.png">
 
     우리가 집중한 기술은 아래와 같습니다.
     - 사용자 친화적인 GUI
